@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1484998962 source:/home/oriamd/Documents/Unix/PoolManager/main.cpp
+	<iostream>
+	<stdlib.h>
+	"TaskFeeder.h"
+	"MonteCarlo.h"
+	"Manager.h"
+
+1483004456 source:/home/oriamd/Documents/Unix/PoolManager/Maneger.cpp
+
+1483004478 source:/home/oriamd/Documents/Unix/PoolManager/TaskFeeder.cpp
+
+1484952751 /home/oriamd/Documents/Unix/PoolManager/TaskFeeder.h
+	<iostream>
+	<stdlib.h>
+	<math.h>
+	<pthread.h>
+	<queue>
+	"Manager.h"
+	"Task.h"
+
+1484952980 /home/oriamd/Documents/Unix/PoolManager/MonteCarlo.h
+	"Task.h"
+
+1484951737 /home/oriamd/Documents/Unix/PoolManager/Manager.h
+	<iostream>
+	<stdlib.h>
+	<vector>
+	<pthread.h>
+	<queue>
+	<unistd.h>
+	<fcntl.h>
+	<string.h>
+	<fstream>
+	"Task.h"
+
+1484952980 /home/oriamd/Documents/Unix/PoolManager/Task.h
+
