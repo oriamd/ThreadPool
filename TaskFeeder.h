@@ -29,9 +29,10 @@ public:
         //Thread safe setting newTasks to true
         pthread_mutex_lock(&managerMutex);
         Manager::newTasks = true;
-        pthread_mutex_unlock(&managerMutex);
         //Notifying the Manager of condition change
         pthread_cond_signal(&managerThreadCond);
+        pthread_mutex_unlock(&managerMutex);
+
     }
 
 };

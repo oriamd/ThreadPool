@@ -12,10 +12,10 @@ public:
     // "The Task" set result member to Hit or not */
     virtual int execute(){
         double x, y;
-        int radios = 1000;
-        x = rand() % radios;
-        y = rand() % radios;
-        if( (pow(x,2) + pow(y,2)) < radios*radios ){
+        unsigned int rand_state = rand();
+        x = rand_r(&rand_state) / ((double)RAND_MAX + 1) * 2.0 - 1.0;
+        y = rand_r(&rand_state) / ((double)RAND_MAX + 1) * 2.0 - 1.0;
+        if( (pow(x,2) + pow(y,2)) < 1 ){
             result = true;              // Hit
         }else{
             result = false;
@@ -30,7 +30,7 @@ public:
 
     //calculate the PI with total numbers of Hits and totalIterators tries
     static double calcPI(int totalHit , int totalIterators ){
-        return 4.0*totalHit/totalIterators ;
+        return 4.0*(double)totalHit/totalIterators ;
     }
 
 };

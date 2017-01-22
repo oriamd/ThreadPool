@@ -3,6 +3,7 @@
 #include "TaskFeeder.h"
 #include "MonteCarlo.h"
 #include "Manager.h"
+#define SEED 35791246
 
 using namespace std;
 
@@ -13,15 +14,15 @@ int main()
 
     TaskFeeder feeder;
     Manager* manager;
-    int totalNumOfTasks = 3000,i, hits=0, taskForEachFeeder;
+    int totalNumOfTasks = 9000,i, hits=0, taskForEachFeeder;
     Task  **tasks1,**tasks2,**tasks3;
 
     //init rand
-    srand(time(NULL));
+     srand((unsigned)time(NULL));
 
-    Manager::init(3);
+
+    Manager::init(5);
     manager = Manager::getInstance();
-    sleep(2);
 
 
     manager->startThread();
@@ -33,6 +34,7 @@ int main()
         tasks1[i] = new MonteCarlo();
     }
     feeder.feedTasks(tasks1, taskForEachFeeder );
+
 
     tasks2 = new Task*[taskForEachFeeder ];
     for(i=0 ; i<taskForEachFeeder ; i++){

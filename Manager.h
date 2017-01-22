@@ -140,10 +140,10 @@ void* managerThread(void* arg){
             // waiting for condition
             pthread_cond_wait(&managerThreadCond, &managerMutex);
         }
-        //Yes, new Tasks in
+        //Yes, new Tasks in now dealing with them so setting them to old
         Manager::newTasks = false;
         //signaling threads of new tasks in queue
-        pthread_cond_signal(&workingThreadCond);
+        pthread_cond_broadcast(&workingThreadCond);
         //Now will unlock and wait for cond to change
         pthread_mutex_unlock(&managerMutex);
         cout <<"<Manager Thread : Tasks In, Notifying WorkingThreads" << endl;
